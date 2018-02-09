@@ -144,15 +144,23 @@
     </form>
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
     <script type="text/javascript">
-    function friendQuery() {
-        var currentURL = window.location.origin;
-        $.ajax({ url: currentURL + "routing/apiRoutes.js", method: "GET" }).
-            done(function(friendData) {
-            console.log("URL: " + currentURL + "routing/apiRoutes.js");
-            console.log(friendData);
-        })
-    };
-    friendQuery();
+        $(".submit").on(click, function() {
+            var newFriend = {
+                name: $("#nameInput").val().trim(),
+                photo: $("#photoInput").val().trim(),
+                question1: $("#question1").val().trim(),
+                question2: $("#question2").val().trim(),
+                question3: $("#question3").val().trim(),
+                question4: $("#question4").val().trim(),
+                question5: $("#question5").val().trim(),
+                question6: $("#question6").val().trim(),
+                question7: $("#question7").val().trim(),
+                question8: $("#question8").val().trim(),
+                question9: $("#question9").val().trim(),
+                question10: $("#question10").val().trim()
+            }
+            console.log(newFriend);
+        });
     </script>
     <!-- Popper JS -->
     <link type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js">
