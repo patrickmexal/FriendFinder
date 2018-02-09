@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Friend Finder</title>
-	<!-- Bootstrap CSS: CDN -->
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- Stylesheet -->
-	<link rel="stylesheet" type="text/css" href="style1.css">
+    <meta charset="UTF-8">
+    <title>Friend Finder</title>
+    <!-- Bootstrap CSS: CDN -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
+
 <body>
-	<div class="jumbotron">
-		<h1><span class="glyphicon glyphicon-sunglasses"></span>
+    <div class="jumbotron">
+        <h1><span class="glyphicon glyphicon-sunglasses"></span>
 		Friend Finder</h1>
-		<hr>
-		<h2>Answer a few basic questions.</h2>
-		<h2>Then find the friend with the greatest compatibility!</h2>
-		<a href="/survey.html"><button class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-tasks"></span>  Go To Survey</button></a>
-	</div>
-	<a href="https://github.com/patrickmexal"><h4><span class="glyphicon glyphicon-hand-right"></span>   Patrick Mexal   <span class="glyphicon glyphicon-hand-left"></span></h4></a>
-	<!-- Bootstrap JS: CDN -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <hr>
+        <h2>Answer a few basic questions.</h2>
+        <h2>Then find the friend with the greatest compatibility!</h2>
+        <a href="/survey.html">
+            <button class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-tasks"></span> Go To Survey</button>
+        </a>
+    </div>
+    <a href="https://github.com/patrickmexal"><h4><span class="glyphicon glyphicon-hand-right"></span>   Patrick Mexal   <span class="glyphicon glyphicon-hand-left"></span></h4></a>
+    <script type="text/javascript">
+    function friendQuery() {
+        var currentURL = window.location.origin;
+        $.ajax({ url: currentURL + "routing/apiRoutes.js", method: "GET" }).done(function(friendData) {
+            console.log("URL: " + currentURL + "routing/apiRoutes.js");
+            console.log(friendData);
+
+            for (var i = 0; i < friendData.length; i++) {
+            	console.log(friendData[i]);
+            }
+        })
+    };
+    friendQuery();
+    </script>
+    <!-- Bootstrap JS: CDN -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Minified JQuery CDN -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </body>
+
 </html>

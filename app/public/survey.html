@@ -144,12 +144,15 @@
     </form>
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
     <script type="text/javascript">
-        function friendQuery() {
-            var currentURL = window.location.origin;
-            $.ajax({url: currentURL + "routing/apiRoutes.js", method: "GET"}).done(function(friendData) {
-                console.log("URL: " + currentURL + "routing/apiRoutes.js");
-            })
-        };
+    function friendQuery() {
+        var currentURL = window.location.origin;
+        $.ajax({ url: currentURL + "routing/apiRoutes.js", method: "GET" }).
+            done(function(friendData) {
+            console.log("URL: " + currentURL + "routing/apiRoutes.js");
+            console.log(friendData);
+        })
+    };
+    friendQuery();
     </script>
     <!-- Popper JS -->
     <link type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js">
