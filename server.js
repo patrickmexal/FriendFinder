@@ -5,7 +5,7 @@ var path = require("path");
 var PORT = process.env.PORT || 3000;
  
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send("Welcome to FriendFinder!")
 })
 
 app.use(bodyParser.urlencoded({ extended: false}))
