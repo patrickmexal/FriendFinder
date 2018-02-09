@@ -143,12 +143,22 @@
         </div>
     </form>
     <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i>Submit</button>
+    <script type="text/javascript">
+        function friendQuery() {
+            var currentURL = window.location.origin;
+            $.ajax({url: currentURL + "routing/apiRoutes.js", method: "GET"}).done(function(friendData) {
+                console.log("URL: " + currentURL + "routing/apiRoutes.js");
+            })
+        };
+    </script>
     <!-- Popper JS -->
     <link type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js">
     <!-- Bootstrap JS: CDN -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="/javascript.js"></script>
+    <!-- Minified JQuery CDN -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 </body>
 
 </html>
